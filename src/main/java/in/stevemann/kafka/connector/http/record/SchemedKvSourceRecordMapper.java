@@ -41,11 +41,11 @@ public class SchemedKvSourceRecordMapper implements KvSourceRecordMapper {
   public void configure(Map<String, ?> settings) {
     config = configFactory.apply(settings);
     keySchema = SchemaBuilder.struct()
-        .name("com.github.castorm.kafka.connect.http.Key").doc("Message Key")
+        .name("in.stevemann.kafka.connector.http.Key").doc("Message Key")
         .field(KEY_FIELD_NAME, string().optional().doc("HTTP Record Key").build())
         .build();
     valueSchema = SchemaBuilder.struct()
-        .name("com.github.castorm.kafka.connect.http.Value").doc("Message Value")
+        .name("in.stevemann.kafka.connector.http.Value").doc("Message Value")
         .field(VALUE_FIELD_NAME, string().doc("HTTP Record Value").build())
         .field(KEY_FIELD_NAME, string().optional().doc("HTTP Record Key").build())
         .field(TIMESTAMP_FIELD_NAME, int64().optional().doc("HTTP Record Timestamp").build())
